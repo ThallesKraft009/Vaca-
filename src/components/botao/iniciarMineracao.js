@@ -188,7 +188,7 @@ if (minerio === "MOB"){
              {
                type: 2,
                label: "Ataque!",
-               custom_id: `matar_${author}`,
+               custom_id: `mob_${author}`,
                style: 4
              }
            ]

@@ -52,4 +52,7 @@ if (interaction === `carvão_${req.body.member.user.id}`) require("./components/
 
     if (interaction === `ferro_${req.body.member.user.id}`) require("./components/selectmenu/ferro.js")(req, res);
   }
+
+  if (interaction === `mob_${req.body.member.user.id}`) require("./components/selectmenu/mob.js")(req, res);
+}
 };
