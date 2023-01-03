@@ -37,13 +37,15 @@ if (type === InteractionType.APPLICATION_COMMAND) {
 
   if (type === InteractionType.MESSAGE_COMPONENT) {
 
-    const botao = data.custom_id;
+    const interaction = data.custom_id;
 
-    if (botao === `madeira_${req.body.member.user.id}`)  require("./components/botao/coletar-madeira.js")(req, res);
+    if (interaction === `madeira_${req.body.member.user.id}`)  require("./components/botao/coletar-madeira.js")(req, res);
 
-    if (botao === `rocha_${req.body.member.user.id}`) require("./components/botao/coletar-rochas.js")(req, res);
+    if (interaction === `rocha_${req.body.member.user.id}`) require("./components/botao/coletar-rochas.js")(req, res);
 
-    if (botao === `minerar_${req.body.member.user.id}`) require("./components/botao/iniciarMineracao.js")(req, res);
+    if (interaction === `minerar_${req.body.member.user.id}`) require("./components/botao/iniciarMineracao.js")(req, res);
 
+
+if (interation === `carvão_${req.body.member.user.id}`) require("./components/selectmenu/carvão.js")(req, res);
   }
 };

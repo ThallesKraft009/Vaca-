@@ -60,7 +60,7 @@ let fome = await db.get(`fome_${author}`);
             components: [
               {
                 type: 3,
-                custom_id: `carvao_${author}`,
+                custom_id: `carvão_${author}`,
                 placeholder: "Abrir Inventário",
                 options: [
                   {
