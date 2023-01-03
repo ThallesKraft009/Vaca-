@@ -5,7 +5,7 @@ module.exports = async(req, res) => {
 
 const author = req.body.member.user.id;
 
-  let chances = ["CARVÃO", "PEDRA", "CARVÃO", "PEDRA", "COBRE", "CARVÃO", "PEDRA", "COBRE", "FERRO"];
+  let chances = ["CARVÃO", "PEDRA", "CARVÃO", "PEDRA", "COBRE", "CARVÃO", "PEDRA", "COBRE", "FERRO", "MOB"];
 
   let minerio = chances[Math.floor(Math.random() * chances.length)];
 
@@ -33,6 +33,7 @@ let fome = await db.get(`fome_${author}`);
       }
     })
 
+  await db.sub(`fome_${author}`)
   
   if (minerio === "PEDRA"){
 
@@ -174,5 +175,28 @@ let fome = await db.get(`fome_${author}`);
       }
     })
   };
+
+if (minerio === "MOB"){
+   return res.send({
+     type: 7,
+     data: {
+       content: `<@${author}> | Cuidado!!! Você achou um monstro!!`,
+       components: [
+         {
+           type: 1,
+           components: [
+             {
+               type: 2,
+               label: "Ataque!",
+               custom_id: `matar_${author}`,
+               style: 4
+             }
+           ]
+         }
+       ]
+     }
+   })
+}
+
 
 }

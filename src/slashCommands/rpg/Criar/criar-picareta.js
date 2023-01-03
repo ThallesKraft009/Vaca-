@@ -33,8 +33,6 @@ module.exports = async(req, res) => {
     let rochas = await db.get(`rochas_${author}`);
       if (rochas === null) rochas = 0;
 
-console.log(rochas, gravetos)
-
     if (rochas < 3) return res.send({
       type: 4,
       data: {
