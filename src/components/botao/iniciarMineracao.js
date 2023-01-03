@@ -33,7 +33,7 @@ let fome = await db.get(`fome_${author}`);
       }
     })
 
-  await db.sub(`fome_${author}`)
+  await db.sub(`fome_${author}`, 2)
   
   if (minerio === "PEDRA"){
 

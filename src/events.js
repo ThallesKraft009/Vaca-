@@ -46,6 +46,10 @@ if (type === InteractionType.APPLICATION_COMMAND) {
     if (interaction === `minerar_${req.body.member.user.id}`) require("./components/botao/iniciarMineracao.js")(req, res);
 
 
-if (interation === `carvão_${req.body.member.user.id}`) require("./components/selectmenu/carvão.js")(req, res);
+if (interaction === `carvão_${req.body.member.user.id}`) require("./components/selectmenu/carvão.js")(req, res);
+
+    if (interaction === `cobre_${req.body.member.user.id}`) require("./components/selectmenu/cobre.js")(req, res);
+
+    if (interaction === `ferro_${req.body.member.user.id}`) require("./components/selectmenu/ferro.js")(req, res);
   }
 };

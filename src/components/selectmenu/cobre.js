@@ -9,7 +9,7 @@ const author = req.body.member.user.id
 //picareta = [ pedra, cobre, ferro, titanio, pular];
 
 
-let carvao = Math.floor(Math.random() * 2) + 20
+let cobre = Math.floor(Math.random() * 2) + 15
   
 if (picareta === "pedra"){
 
@@ -23,13 +23,13 @@ picareta = await db.get(`picareta_rocha_${author}`);
     }
   })
 
-  await db.add(`carvão_${author}`, carvao);
+  await db.add(`cobre_${author}`, cobre);
   await db.sub(`picareta_rocha_${author}`, 2)
 
   return res.send({
     type: 7,
     data: {
-      content: `<@${author}> | Você minerou ${carvao} carvões!`,
+      content: `<@${author}> | Você minerou ${cobre} cobres!`,
       components: [
         {
           type: 1,
@@ -58,13 +58,13 @@ if (picareta === "cobre"){
     }
   })
 
-  await db.add(`carvão_${author}`, carvao);
+  await db.add(`cobre_${author}`, cobre);
   await db.sub(`picareta_cobre_${author}`, 2)
 
   return res.send({
     type: 7,
     data: {
-      content: `<@${author}> | Você minerou ${carvao} carvões!`,
+      content: `<@${author}> | Você minerou ${cobre} cobres!`,
       components: [
         {
           type: 1,
@@ -92,13 +92,13 @@ if (picareta === "ferro"){
     }
   })
 
-  await db.add(`carvão_${author}`, carvao);
+  await db.add(`cobre_${author}`, cobre);
   await db.sub(`picareta_ferro_${author}`, 2)
 
   return res.send({
     type: 7,
     data: {
-      content: `<@${author}> | Você minerou ${carvao} carvões!`,
+      content: `<@${author}> | Você minerou ${cobre} cobres!`,
       components: [
         {
           type: 1,
@@ -126,13 +126,13 @@ if (picareta === "titanio"){
     }
   })
 
-  await db.add(`carvão_${author}`, carvao);
+  await db.add(`cobre_${author}`, cobre);
   await db.sub(`picareta_titanio_${author}`, 2)
 
   return res.send({
     type: 7,
     data: {
-      content: `<@${author}> | Você minerou ${carvao} carvões!`,
+      content: `<@${author}> | Você minerou ${cobre} cobres!`,
       components: [
         {
           type: 1,

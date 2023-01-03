@@ -9,44 +9,8 @@ const author = req.body.member.user.id
 //picareta = [ pedra, cobre, ferro, titanio, pular];
 
 
-let carvao = Math.floor(Math.random() * 2) + 20
+let ferro = Math.floor(Math.random() * 2) + 20
   
-if (picareta === "pedra"){
-
-picareta = await db.get(`picareta_rocha_${author}`);
-    if (picareta === null) picareta = 0;
-
-  if (picareta === 0 || picareta < 0) return res.send({
-    type: 7,
-    data: {
-      content: `Você não tem uma picareta de **Pedra**!`
-    }
-  })
-
-  await db.add(`carvão_${author}`, carvao);
-  await db.sub(`picareta_rocha_${author}`, 2)
-
-  return res.send({
-    type: 7,
-    data: {
-      content: `<@${author}> | Você minerou ${carvao} carvões!`,
-      components: [
-        {
-          type: 1,
-          components: [
-            {
-              type: 2,
-              label: "Continuar mineração",
-              custom_id: `minerar_${author}`,
-              style: 3
-            }
-          ]
-        }
-      ]
-    }
-  })
-
-}
 if (picareta === "cobre"){
   picareta = await db.get(`picareta_cobre_${author}`);
     if (picareta === null) picareta = 0;
@@ -58,13 +22,13 @@ if (picareta === "cobre"){
     }
   })
 
-  await db.add(`carvão_${author}`, carvao);
+  await db.add(`ferro_${author}`, ferro);
   await db.sub(`picareta_cobre_${author}`, 2)
 
   return res.send({
     type: 7,
     data: {
-      content: `<@${author}> | Você minerou ${carvao} carvões!`,
+      content: `<@${author}> | Você minerou ${ferro} ferros!`,
       components: [
         {
           type: 1,
@@ -92,13 +56,13 @@ if (picareta === "ferro"){
     }
   })
 
-  await db.add(`carvão_${author}`, carvao);
+  await db.add(`ferro_${author}`, ferro);
   await db.sub(`picareta_ferro_${author}`, 2)
 
   return res.send({
     type: 7,
     data: {
-      content: `<@${author}> | Você minerou ${carvao} carvões!`,
+      content: `<@${author}> | Você minerou ${ferro} ferros!`,
       components: [
         {
           type: 1,
@@ -126,13 +90,13 @@ if (picareta === "titanio"){
     }
   })
 
-  await db.add(`carvão_${author}`, carvao);
+  await db.add(`ferro_${author}`, ferro);
   await db.sub(`picareta_titanio_${author}`, 2)
 
   return res.send({
     type: 7,
     data: {
-      content: `<@${author}> | Você minerou ${carvao} carvões!`,
+      content: `<@${author}> | Você minerou ${ferro} ferros!`,
       components: [
         {
           type: 1,
