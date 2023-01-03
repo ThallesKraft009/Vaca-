@@ -28,4 +28,4 @@ login(process.env.token, [
 slashCommands("../../events.js", process.env.key, process.env.id, process.env.guild, process.env.token, commands)
 
 
-//mongodb(process.env.mongococns
+//mongodb(process.env.mongococnsaaa
