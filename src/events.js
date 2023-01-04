@@ -57,8 +57,5 @@ if (interaction === `carvão_${req.body.member.user.id}`) require("./components/
 
   if (interaction === `mob_${req.body.member.user.id}`) require("./components/selectmenu/mob.js")(req, res);
 
-
-  if (interaction === "personagem") require("./slashCommands/Adivinhe_o_personagem/interações.js")(req, res, DiscordRequest)
-
 }
 }
