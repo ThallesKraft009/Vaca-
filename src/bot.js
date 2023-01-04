@@ -1,4 +1,6 @@
 require("dotenv").config()
+const { slashCommands, login, mongodb, edit_json } = require("./structure/index.js");
+const commands = require("./slashCommands/list.js");
 
 const c = require("colors");
 const express = require("express");
@@ -10,12 +12,8 @@ app.get("/", (request, response) => {
   ping.setHours(ping.getHours() - 3); 
 console.log(c.yellow(`${ping.getUTCHours()}:${ping.getUTCMinutes()}:${ping.getUTCSeconds()} => Website ping recebido.`)); 
   response.sendStatus(200); 
-
+  
 });
-
-const { slashCommands, login, mongodb } = require("./structure/index.js");
-
-const commands = require("./slashCommands/list.js");
 
 login(process.env.token, [
   {

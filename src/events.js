@@ -33,6 +33,8 @@ if (type === InteractionType.APPLICATION_COMMAND) {
 
   if (nome === "explorar-caverna") require("./slashCommands/rpg/Explorar/minerar.js")(req, res);
 
+  if (nome === "adivinhe_o_personagem") require("./slashCommands/Adivinhe_o_personagem/jogo.js")(req, res, DiscordRequest)
+
 }
 
   if (type === InteractionType.MESSAGE_COMPONENT) {
@@ -51,8 +53,12 @@ if (interaction === `carvão_${req.body.member.user.id}`) require("./components/
     if (interaction === `cobre_${req.body.member.user.id}`) require("./components/selectmenu/cobre.js")(req, res);
 
     if (interaction === `ferro_${req.body.member.user.id}`) require("./components/selectmenu/ferro.js")(req, res);
-  }
+  
 
   if (interaction === `mob_${req.body.member.user.id}`) require("./components/selectmenu/mob.js")(req, res);
+
+
+  if (interaction === "personagem") require("./slashCommands/Adivinhe_o_personagem/interações.js")(req, res, DiscordRequest)
+
 }
-};
+}

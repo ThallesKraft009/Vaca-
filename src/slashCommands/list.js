@@ -10,7 +10,7 @@ const falar = {
    name: "falar",
     description: "Faça eu enviar uma mensagem",
     type: 1,
-    default_member_permissions: 2,
+    default_member_permissions: 1 << 13,
     options: [
       {
         name: "msg",
@@ -131,12 +131,45 @@ const explorarCaverna = {
     type: 1
 }
 
+const criarFornalha = {
+  name: "criar-fornalha",
+  description: "Crie uma fornalha pra usar",
+  type: 1,
+  options: [
+    {
+      name: "fornalha",
+      description: "Qual fornalha você quer criar?",
+      type: 3, 
+      required: true,
+      choices: [
+        {
+          name: "Fornalha de Pedra",
+          value: "pedra"
+        },{
+          name: "Fornalha de Cobre",
+          value: "cobre"
+        },{
+          name: "Fornalha de Ferro",
+          value: "ferro"
+        },{
+          name: "Fornalha de Titânio",
+          value: "titanio"
+        }   
+      ]
+    }
+  ]
+}
+
+const jogo = {
+  name: "adivinhe_o_personagem",
+  description: "Jogue com os amigos",
+  type: 1
+}
+
   
-const comandos = [ping, falar, avatar, buscarUID, salvarUID, coletarMadeira, entrar_no_mundo, coletarRochas, criarPicareta, explorarCaverna, criarGravetos]
+const comandos = [ping, falar, avatar, buscarUID, salvarUID, coletarMadeira, entrar_no_mundo, coletarRochas, criarPicareta, explorarCaverna, criarGravetos, criarFornalha]
 
 module.exports = comandos;
-
-
 
 async function editarCmd(id, command){
 
