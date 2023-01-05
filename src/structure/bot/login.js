@@ -37,7 +37,7 @@ const data = {
   ws.on("open", function open() {
     ws.send(JSON.stringify(data));
 
-    console.log(c.cyan("Fada da lua Canary foi iniciada!"))
+    console.log(c.cyan("Um teste foi iniciado!"))
 
 
 })

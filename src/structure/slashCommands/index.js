@@ -54,8 +54,6 @@ const { type, id, data } = req.body;
     
     if (type === InteractionType.PING) {
 
-      console.log(InteractionResponseType.PONG)
-
     return res.send({ type: InteractionResponseType.PONG });
     } 
     

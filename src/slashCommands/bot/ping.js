@@ -1,10 +1,10 @@
-module.exports = (req, res) => {
-
-return res.send({
-        type: 4,
-        data: {
-          content: `🏓 Pong!\nApi Ping: **\`${res.statusCode}ms\`**`,
-        },
-      });
-
-};
+module.exports = async(req, res) => {
+ 
+ res.send({
+ type: 4,
+ data: {
+     content: `opa, eae`
+   }
+})
+  
+}
