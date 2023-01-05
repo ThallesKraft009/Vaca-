@@ -49,7 +49,7 @@ const embed = {
 
 
   
-const comandos = [ping, say];
+const comandos = [ping, say, embed];
 
 module.exports = comandos;
 
